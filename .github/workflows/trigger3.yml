@@ -1,0 +1,7 @@
+jobs:
+  set-output:
+    runs-on: ubuntu-latest
+    outputs:
+      name: Thatchayaini
+    steps:
+      - run: echo "::set-output name=name::Thatchayaini"
