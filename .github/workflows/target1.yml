@@ -1,0 +1,10 @@
+name: Target Manual Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  manual-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Manually triggered or triggered by another workflow"
