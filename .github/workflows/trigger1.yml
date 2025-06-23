@@ -1,0 +1,16 @@
+name: Trigger Workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger-manual:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
+            https://api.github.com/repos/<OWNER>/<REPO>/actions/workflows/target.yml/dispatches \
+            -d '{"ref":"main"}'
