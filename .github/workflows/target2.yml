@@ -1,0 +1,15 @@
+name: Run After Trigger
+
+on:
+  workflow_run:
+    workflows: ["Trigger Workflow"]
+    types:
+      - completed
+
+jobs:
+  follow-up:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered after workflow completion"
+
+
